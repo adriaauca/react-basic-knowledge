@@ -1,24 +1,23 @@
 import React from 'react';
 import './App.css';
 
-function HelloWorld(props) {
-  return (
-  <div id="hello">
-    <h3>{props.subttitle}</h3>
-    {props.mytext}
-  </div>
-  );
-}
+import tasks from './sample/tasks.json';
+import Tasks from './components/Tasks';
 
-function App() {
-  return (
-    <div>
-      This is my component:
-      <HelloWorld mytext="Hello 1" subttitle="Answer 1:" />
-      <HelloWorld mytext="Hello 2" subttitle="Answer 2:" />
-      <HelloWorld mytext="Hello 3" subttitle="Answer 3:" />
+
+class App extends React.Component {
+
+  state = {
+
+    tasks: tasks
+  }
+
+  render(){
+
+    return <div>
+      <Tasks tasks={this.state.tasks} />
     </div>
-  );
+  }
 }
 
 export default App;
