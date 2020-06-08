@@ -10,7 +10,7 @@ export default class TaskForm extends React.Component {
 
     onSubmit = element => {
 
-        console.log(this.state)
+        this.props.addTask(this.state.title, this.state.description);
         element.preventDefault();
     }
 
